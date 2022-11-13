@@ -6,13 +6,13 @@ const init = () => {
 }
 
 export const useTodos = () => {
-  
+
     const [ todos, dispatch ] = useReducer( todoReducer, [], init );
 
     useEffect(() => {
       localStorage.setItem('todos', JSON.stringify( todos ) );
     }, [todos])
-    
+
 
     const handleNewTodo = ( todo ) => {
         const action = {
